@@ -380,7 +380,7 @@ public class IndexerImpl implements Indexer {
             if(state == State.POSTPROCESSING){ //if state > INITIALISED
                 throw new IllegalStateException("Unable to skip post processing if postprocessing is already in progress!");
             }
-            if(state.ordinal() >= state.POSTPROCESSED.ordinal()){
+            if(state.ordinal() >= State.POSTPROCESSED.ordinal()){
                 return; //already post processed
             }
             setState(State.POSTPROCESSED);
@@ -562,7 +562,7 @@ public class IndexerImpl implements Indexer {
             if(state == State.INDEXING){ 
                 throw new IllegalStateException("Unable to skip indexing if indexing is already in progress!");
             }
-            if(state.ordinal() >= state.INDEXED.ordinal()){ //if state > INDEXING
+            if(state.ordinal() >= State.INDEXED.ordinal()){ //if state > INDEXING
                 return; //already in INDEXED state
             }
             setState(State.INDEXED);

@@ -87,6 +87,7 @@ public class Urify implements Runnable{
         options.addOption("p","prefix",true, 
             "The URI prefix used for wrapping the bNode Id");
         options.addOption("e","encoding",true, "the char encodinf (default: UTF-8)");
+        options.addOption("o","outputFilePrefix",true, "The prefix to add to output files, defaults to \"uf_\"");
     }
     /**
      * @param args
@@ -101,6 +102,7 @@ public class Urify implements Runnable{
         		out.println("-h/--help: Print this help and exit.");
         		out.println("-p/--prefix: Required: The prefix to add to blank nodes to make them URIs.");
         		out.println("-e/--encoding: The text encoding to expect in the RDF, defaults to UTF-8.");
+        		out.println("-o/--outputFilePrefix: The prefix to add to output files, defaults to \"uf_\".");
         		exit(0);
         }
         if(!line.hasOption('p')){
